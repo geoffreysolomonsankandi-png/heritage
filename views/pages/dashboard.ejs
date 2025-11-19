@@ -1,0 +1,53 @@
+<div id="dashboard" class="page">
+    <section class="dashboard-section">
+        <div class="container" style="max-width: 800px; text-align: center;">
+            <h2>Contributor Dashboard</h2>
+            <p>Welcome! Submit a new historical site for our administrators to review. Your contributions help our community grow.</p>
+            
+            <form id="submission-form" style="margin-top: 2rem; text-align: left;">
+                <div class="form-group">
+                    <label for="name">Site Name</label>
+                    <input type="text" id="name" name="name" placeholder="e.g., The Great Library of Alexandria" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description & Story</label>
+                    <textarea id="description" name="description" rows="6" placeholder="Share the history, significance, and stories associated with this site." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="imageUrl">Image URL</label>
+                    <input type="url" id="imageUrl" name="imageUrl" placeholder="https://example.com/image.jpg" required>
+                </div>
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="lat">Latitude</label>
+                        <input type="number" step="any" id="lat" name="lat" placeholder="e.g., 31.2089" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lng">Longitude</label>
+                        <input type="number" step="any" id="lng" name="lng" placeholder="e.g., 29.9092" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 1rem;">Submit for Review</button>
+            </form>
+
+            <!-- Container for submission results and AI suggestions -->
+            <div id="submission-result" class="submission-result-container"></div>
+        </div>
+    </section>
+</div>
+
+<!-- Add some basic form styling to style.css for better presentation -->
+<style>
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 500; }
+    .form-group input, .form-group textarea {
+        width: 100%;
+        padding: 0.8rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        font-family: var(--font-sans);
+        font-size: 1rem;
+    }
+    .form-group-row { display: flex; gap: 1rem; }
+    .form-group-row .form-group { flex: 1; }
+</style>

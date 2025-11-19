@@ -1,0 +1,26 @@
+<!-- In: views/partials/_header.ejs -->
+
+<% const base = (typeof isTownPage !== 'undefined' && isTownPage) ? '/' : '' %>
+
+<header class="header">
+    <div class="container">
+        <a href="<%= base %>#home" class="logo nav-link">Heritage Hub</a>
+        <nav class="nav">
+            <ul class="nav-links">
+                <li><a href="<%= base %>#home" class="nav-link">Home</a></li>
+                <li><a href="<%= base %>#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="<%= base %>#memorials" class="nav-link">Memorials</a></li>
+                <li><a href="<%= base %>#calendar" class="nav-link">Calendar</a></li>
+                <li><a href="<%= base %>#map" class="nav-link">Map</a></li>
+                <li><a href="<%= base %>#about" class="nav-link">About</a></li>
+                <li><a href="<%= base %>#login" class="nav-link">Login</a></li>
+            </ul>
+            <a href="<%= base %>#map" class="btn btn-primary nav-link">Explore Map</a>
+            <button class="hamburger-menu" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </div>
+</header>

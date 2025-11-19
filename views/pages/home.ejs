@@ -1,0 +1,80 @@
+<!-- In: views/pages/home.ejs -->
+
+<div id="home" class="page">
+    <!-- Hero Section -->
+    <section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('<%= siteImages.heroBackground %>');" data-editable-key="heroBackground" data-editable-type="background">
+        <div class="hero-content">
+            <h1 data-editable-key="homeHeroTitle"><%= siteTexts.homeHeroTitle %></h1>
+            <p data-editable-key="homeHeroSubtitle"><%= siteTexts.homeHeroSubtitle %></p>
+            <a href="#map" class="btn btn-primary nav-link" style="padding: 1rem 2.5rem; font-size: 1.1rem;" data-editable-key="homeHeroButton"><%= siteTexts.homeHeroButton %></a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2 data-editable-key="homeGalleryTitle"><%= siteTexts.homeGalleryTitle %></h2>
+            <div class="gallery-grid">
+                <div class="gallery-card"><img src="<%= siteImages.homeGallery1 %>" alt="The Colosseum" data-editable-key="homeGallery1"><div>The Colosseum<span>Rome, Italy</span></div></div>
+                <div class="gallery-card"><img src="<%= siteImages.homeGallery2 %>" alt="Fushimi Inari Shrine" data-editable-key="homeGallery2"><div>Fushimi Inari Shrine<span>Kyoto, Japan</span></div></div>
+                <div class="gallery-card"><img src="<%= siteImages.homeGallery3 %>" alt="Pyramids of Giza" data-editable-key="homeGallery3"><div>Pyramids of Giza<span>Cairo, Egypt</span></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memorial of the Day Section (NOW WITH A UNIQUE ID) -->
+    <section class="memorial-section" id="motd-section-preview">
+        <div class="container">
+            <h2 data-editable-key="homeMemorialTitle"><%= siteTexts.homeMemorialTitle %></h2>
+            
+            <div id="motd-container">
+                <% if (memorialOfTheDay) { %>
+                    <div class="feature">
+                        <div class="feature-text">
+                            <h3 data-editable-key="motd_title"><%= memorialOfTheDay.title %></h3>
+                            <p data-editable-key="motd_desc"><%= memorialOfTheDay.description %></p>
+                            <% if (memorialOfTheDay.link) { %>
+                                <a href="<%= memorialOfTheDay.link %>" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-editable-key="motd_link">Read More</a>
+                            <% } %>
+                        </div>
+                        <div class="feature-image">
+                            <img src="<%= memorialOfTheDay.imageUrl %>" alt="<%= memorialOfTheDay.title %>" data-editable-key="motd_image">
+                        </div>
+                    </div>
+                <% } else { %>
+                    <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+                        <h4>No Memorial Scheduled for Today</h4>
+                        <p>Explore the full calendar to learn more, or select an event in the admin panel to preview it here.</p>
+                        <a href="#calendar" class="btn btn-primary nav-link">View Full Calendar</a>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2 class="map-header" data-editable-key="homeMapTitle"><%= siteTexts.homeMapTitle %></h2>
+             <!-- THE FIX IS HERE: The static image is replaced with a real map container -->
+            <div id="leaflet-map-home" class="leaflet-map-embedded">
+                <!-- This div will be populated by interactive-map.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="testimonials-header">
+                 <h2 data-editable-key="homeTestimonialTitle"><%= siteTexts.homeTestimonialTitle %></h2>
+                 <span class="rating-badge">Rated <strong>4.9/5.0</strong> by Contributors</span>
+            </div>
+            <div class="testimonials-grid">
+                 <div class="testimonial-card"><div class="stars">★★★★★</div><p data-editable-key="aboutTestimonialQuote1"><%= siteTexts.aboutTestimonialQuote1 %></p><div class="user-profile"><img src="<%= siteImages.testimonialAvatar1 %>" class="avatar-img" data-editable-key="testimonialAvatar1"><span data-editable-key="aboutTestimonialAuthor1"><%= siteTexts.aboutTestimonialAuthor1 %></span></div></div>
+                 <div class="testimonial-card"><div class="stars">★★★★★</div><p data-editable-key="aboutTestimonialQuote2"><%= siteTexts.aboutTestimonialQuote2 %></p><div class="user-profile"><img src="<%= siteImages.testimonialAvatar2 %>" class="avatar-img" data-editable-key="testimonialAvatar2"><span data-editable-key="aboutTestimonialAuthor2"><%= siteTexts.aboutTestimonialAuthor2 %></span></div></div>
+                 <div class="testimonial-card"><div class="stars">★★★★★</div><p data-editable-key="aboutTestimonialQuote3"><%= siteTexts.aboutTestimonialQuote3 %></p><div class="user-profile"><img src="<%= siteImages.testimonialAvatar3 %>" class="avatar-img" data-editable-key="testimonialAvatar3"><span data-editable-key="aboutTestimonialAuthor3"><%= siteTexts.aboutTestimonialAuthor3 %></span></div></div>
+            </div>
+        </div>
+    </section>
+</div>

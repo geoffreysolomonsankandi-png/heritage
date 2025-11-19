@@ -1,0 +1,47 @@
+<!-- In: views/pages/admin.ejs -->
+
+<div id="admin" class="page">
+    <div class="admin-dashboard-container">
+        <!-- Left Sidebar Navigation -->
+        <aside class="admin-sidebar">
+            <h3>Edit Pages</h3>
+            <nav class="admin-nav">
+                <ul>
+                    <li><a href="#" class="admin-nav-link active" data-target="home">Home Page</a></li>
+                    <li><a href="#" class="admin-nav-link" data-target="about">About Page</a></li>
+                    <li><a href="#" class="admin-nav-link" data-target="gallery">Gallery Page</a></li>
+                    <li><a href="#" class="admin-nav-link" data-target="memorials">Memorials Page</a></li>
+                    
+                    <!-- THE FIX IS HERE: This link was missing -->
+                    <li><a href="#" class="admin-nav-link" data-target="calendar">Events Calendar</a></li>
+                    
+                    <li><a href="#" class="admin-nav-link" data-target="map">Map Page</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="admin-main-content">
+            <!-- Left Panel for Controls -->
+            <div class="admin-controls-container">
+                <div class="admin-controls-header">
+                    <h2 id="admin-controls-title">Editing: Home Page</h2>
+                    <p>Changes are previewed in real-time in the right panel. Click "Save" on an item to make the change permanent.</p>
+                </div>
+                <div id="admin-controls-content">
+                    <!-- Text and Image controls will be dynamically inserted here by main.js -->
+                    <div class="admin-item-placeholder">
+                        <p>Loading controls...</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Panel for Live Preview -->
+            <div class="admin-preview-container">
+                <div class="iframe-header">
+                    <span>Live Preview</span>
+                </div>
+                <iframe id="admin-preview-frame" src="/?preview=true#home" title="Live Preview"></iframe>
+            </div>
+        </main>
+    </div>
+</div>

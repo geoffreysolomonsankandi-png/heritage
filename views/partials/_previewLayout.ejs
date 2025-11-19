@@ -1,0 +1,45 @@
+<!-- In: views/partials/_previewLayout.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heritage Hub - Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Leaflet CSS for the map page -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <style>
+        body { padding-top: 0 !important; }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- 
+            This is the crucial fix. This layout file now also passes ALL data
+            down to the partials, just like the main layout file does.
+        -->
+        <%- include('../pages/home', { siteImages, siteTexts, memorialOfTheDay, allEvents }) %>
+        <%- include('../pages/gallery', { siteImages, siteTexts, memorialOfTheDay, allEvents }) %>
+        <%- include('../pages/memorials', { siteImages, siteTexts, memorialOfTheDay, allEvents }) %>
+        <%- include('../pages/map', { siteImages, siteTexts, memorialOfTheDay, allEvents }) %>
+        <%- include('../pages/about', { siteImages, siteTexts, memorialOfTheDay, allEvents }) %>
+        <%- include('../pages/calendar', { siteImages, siteTexts, memorialOfTheDay, allEvents }) %>
+        <%- include('../pages/dashboard', { siteImages, siteTexts, memorialOfTheDay, allEvents }) %>
+        <%- include('../pages/admin', { siteImages, siteTexts, memorialOfTheDay, allEvents }) %>
+        <%- include('../pages/login', { siteImages, siteTexts, memorialOfTheDay, allEvents }) %>
+    </main>
+
+    <script>
+        const siteTexts = <%- JSON.stringify(siteTexts) %>;
+    </script>
+    <!-- Leaflet JS for the map page -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/interactive-map.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>

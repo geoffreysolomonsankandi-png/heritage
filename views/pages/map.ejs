@@ -1,0 +1,18 @@
+<!-- In: views/pages/map.ejs -->
+<div id="map" class="page">
+    <section class="map-section">
+       <div class="container">
+           <h2 class="map-header" data-editable-key="homeMapTitle"><%= siteTexts.homeMapTitle %></h2>
+           <p style="text-align:center; max-width: 800px; margin: -2rem auto 2rem;">Our interactive map is a gateway to the world's heritage. Click, explore, and uncover the stories behind thousands of historical landmarks. Add your own discoveries and help us build the most comprehensive historical map on the planet.</p>
+           
+           <!-- This container holds the Leaflet map -->
+           <div id="leaflet-map-container">
+               <div id="leaflet-map-header">
+                   <h1>🗺️ Namibia Map</h1>
+                   <p>Interactive map showing the country of Namibia</p>
+               </div>
+               <div id="leaflet-map"></div>
+           </div>
+       </div>
+   </section>
+</div>
