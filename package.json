@@ -1,0 +1,25 @@
+{
+    "name": "heritage-hub",
+    "version": "1.0.0",
+    "description": "A platform to discover, share, and preserve historical landmarks.",
+    "main": "server.js",
+    "scripts": {
+        "start": "node server.js"
+    },
+    "dependencies": {
+        "@google/generative-ai": "^0.1.3",
+        "apollo-server-express": "^3.13.0",
+        "bcryptjs": "^2.4.3",
+        "dotenv": "^16.3.1",
+        "ejs": "^3.1.9",
+        "express": "^4.18.2",
+        "graphql": "^16.8.1",
+        "graphql-upload": "^13.0.0",
+        "jsonwebtoken": "^9.0.2",
+        "mongoose": "^8.0.3",
+        "multer": "^2.0.2",
+        "qrcode": "^1.5.4",
+        "uuid": "^13.0.0",
+        "ws": "^8.18.3"
+    }
+}
